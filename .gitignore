@@ -1,3 +1,4 @@
 model_lstm/model_lstm/data/*.csv
 model_lstm/model_lstm/data/*.txt
+model_lstm/model_lstm/data/*.npy
 __pycache__
