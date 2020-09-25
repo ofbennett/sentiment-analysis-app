@@ -1,8 +1,6 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 import re
 from nltk.stem import SnowballStemmer
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
 
 class TextCleaning(BaseEstimator, TransformerMixin):
     def __init__(self, regex):

@@ -18,3 +18,5 @@ TEXT_CLEANING_REGEX = r"@\S+|https?:\S+|[^A-Za-z0-9']+"
 SKIP_STEMMING = False
 SKIP_STOP_WORD_REMOVAL = False
 STOP_WORDS = {"the", "and", "that", "this", "if"}
+NUM_WORDS = 10000
+PADDING_MAX_LENGTH = 30
