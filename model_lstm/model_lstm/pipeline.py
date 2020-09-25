@@ -2,6 +2,7 @@ from sklearn.pipeline import Pipeline
 from model_lstm.utils import preprocessors as pp
 from model_lstm.utils import encoders as enc
 from model_lstm.config import config
+from model_lstm import model
 
 lstm_pipeline = Pipeline(
     [
@@ -15,5 +16,6 @@ lstm_pipeline = Pipeline(
                                             embedding_dim=config.WORD_EMBEDDINGS_DIM,
                                             words_kept=config.NUM_WORDS)),
         ("sequence_padding", enc.SequencePadding(max_length=config.PADDING_MAX_LENGTH)),
+        ("lstm_model", model.wrap_model())
     ]
 )
