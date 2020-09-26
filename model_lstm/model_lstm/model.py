@@ -1,4 +1,4 @@
-from tensorflow.keras import layers, Model, Input, initializers
+from tensorflow.keras import layers, Model, Input, initializers, Sequential
 from tensorflow.keras.optimizers import Adam
 from keras.wrappers.scikit_learn import KerasClassifier
 import numpy as np
@@ -12,14 +12,12 @@ def make_model():
                                         embeddings_initializer=initializers.Constant(embedding_matrix),
                                         trainable=False)
 
-    int_sequences_input = Input(shape=(config.PADDING_MAX_LENGTH,), dtype="int64")
-    embedded_sequences = embedding_layer(int_sequences_input)
-    x = layers.Bidirectional(layers.LSTM(64, dropout=0.2, recurrent_dropout=0.2))(embedded_sequences)
-    preds = layers.Dense(1, activation="sigmoid")(x)
-
-    model = Model(int_sequences_input, preds)
+    model = Sequential()
+    model.add(Input(shape=(config.PADDING_MAX_LENGTH,), dtype="int64"))
+    model.add(embedding_layer)
+    model.add(layers.Bidirectional(layers.LSTM(64, dropout=0.2, recurrent_dropout=0.2)))
+    model.add(layers.Dense(1, activation="sigmoid"))
     model.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
-    
     return model
 
 def wrap_model():

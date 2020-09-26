@@ -1,4 +1,6 @@
 model_lstm/model_lstm/data/*.csv
 model_lstm/model_lstm/data/*.txt
 model_lstm/model_lstm/data/*.npy
+model_lstm/model_lstm/trained_models/*.h5
+model_lstm/model_lstm/trained_models/*.pkl
 __pycache__
