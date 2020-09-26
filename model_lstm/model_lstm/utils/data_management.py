@@ -4,8 +4,12 @@ from model_lstm.utils import preprocessors as pp
 import joblib
 import keras
 from keras.wrappers.scikit_learn import KerasClassifier
+import logging
+
+logger = logging.getLogger(__name__)
 
 def load_data(path):
+    logger.info(f"Loading data from: {path}")
     df = pd.read_csv(path, encoding=config.ENCODING, names=config.DATASET_COLUMNS)
     df["target"] = df["target"].apply(pp.convert_labels)
     df = df.sample(frac=1, random_state=config.SEED).reset_index(drop=True) # shuffles rows
@@ -15,13 +19,17 @@ def load_data(path):
 def save_fitted_pipeline(pipeline):
     model_path = config.TRAINED_MODEL_DIR / config.TRAINED_MODEL_FILE
     pipeline_path = config.TRAINED_MODEL_DIR / config.TRAINED_PIPELINE_FILE
+    logger.info(f"Saving model to: {model_path}")
     pipeline.named_steps["lstm_model"].model.save(model_path)
     pipeline.named_steps["lstm_model"].model = None
+    logger.info(f"Saving pipeline to: {pipeline_path}")
     joblib.dump(pipeline, pipeline_path)
 
 def load_fitted_pipeline():
     model_path = config.TRAINED_MODEL_DIR / config.TRAINED_MODEL_FILE
     pipeline_path = config.TRAINED_MODEL_DIR / config.TRAINED_PIPELINE_FILE
+    logger.info(f"Loading pipeline from: {pipeline_path}")
     pipeline = joblib.load(pipeline_path)
+    logger.info(f"Loading model from: {model_path}")
     pipeline.named_steps["lstm_model"].model = keras.models.load_model(model_path)
     return pipeline

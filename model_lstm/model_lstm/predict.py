@@ -2,6 +2,9 @@ from model_lstm.utils import data_management as dm
 from model_lstm.config import config
 import numpy as np
 import pandas as pd
+import logging
+
+logger = logging.getLogger(__name__)
 
 lstm_pipeline = dm.load_fitted_pipeline()
 
