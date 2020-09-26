@@ -2,6 +2,9 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
+import logging
+
+logger = logging.getLogger(__name__)
 
 class TextEncoding(BaseEstimator, TransformerMixin):
     def __init__(self, glove_embedding_path, embedding_matrix_path, num_words, embedding_dim, words_kept):
@@ -45,7 +48,7 @@ class TextEncoding(BaseEstimator, TransformerMixin):
             else:
                 if i < (self.words_kept+2):
                     misses += 1
-        print(f"Converted {hits} words ({misses} misses) in words kept")
+        logger.info(f"Converted {hits} words ({misses} misses) in words kept")
         np.save(self.embedding_matrix_path, embedding_matrix)
 
 
