@@ -13,13 +13,15 @@ def test_predict_one():
     pred = predict_one(test_example)
     print("Prediction of example:")
     print(pred)
+    assert pred[0] == 1
 
-def test_predict_many():
-    test_examples = ["This is great", "This is terrible", "I'm so happy"]
-    test_targets = [1,0,1]
-    preds = predict_many(test_examples)
-    print("Precition of list of examples:")
-    print(preds)
+def test_predict_many(easy_sentiment_examples):
+    X = easy_sentiment_examples["test"]
+    y = easy_sentiment_examples["target"]
+    preds = predict_many(X)
+    assert len(preds) == len(X)
+    for i in range(len(X)):
+        assert preds[i][0] == y[i]
 
 def test_predict_against_training_set():
     data_path = config.DATA_DIR / config.TRAINING_DATA_FILE
@@ -28,3 +30,4 @@ def test_predict_against_training_set():
     acc = sklearn.metrics.accuracy_score(y_train, preds)
     print("Predict acc against training set:")
     print(acc)
+    assert acc > 0.7
