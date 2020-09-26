@@ -8,5 +8,5 @@ def easy_sentiment_examples():
                      "I feel awful.",
                      "I have wonderful news!"]
     target_examples = [1, 0, 1, 0, 1]
-    fixture = {"test": test_examples, "target": target_examples}
-    return fixture
+    
+    return test_examples, target_examples
