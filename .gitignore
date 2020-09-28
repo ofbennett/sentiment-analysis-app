@@ -7,3 +7,4 @@ __pycache__
 model_lstm/build
 model_lstm/dist
 *.egg-info
+.tox
