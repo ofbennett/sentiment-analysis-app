@@ -4,3 +4,6 @@ model_lstm/model_lstm/data/*.npy
 model_lstm/model_lstm/trained_models/*.h5
 model_lstm/model_lstm/trained_models/*.pkl
 __pycache__
+model_lstm/build
+model_lstm/dist
+*.egg-info
