@@ -1,7 +1,8 @@
-from model_lstm.train import train
+from model_lstm.train import train, train_test_run
 from model_lstm.config import config
 from model_lstm.utils import data_management as dm
 import sklearn
+import numpy as np
 import pytest
 
 @pytest.mark.train
@@ -29,3 +30,10 @@ def test_predict_against_training_subset():
     preds = predict_many(X_train["text"].tolist())
     acc = sklearn.metrics.accuracy_score(y_train, preds)
     assert acc > 0.7
+
+def test_model_training_reproducible():
+    data_subset_path = config.DATA_DIR / config.TRAINING_DATA_SUBSET_FILE
+    model1 = train_test_run()
+    model2 = train_test_run()
+    for l1, l2 in zip(model1.layers, model2.layers):
+        assert np.array_equal(l1.get_weights()[0], l2.get_weights()[0])

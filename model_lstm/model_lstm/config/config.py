@@ -4,7 +4,7 @@ import model_lstm
 PACKAGE_ROOT = pathlib.Path(model_lstm.__file__).resolve().parent
 
 DATA_DIR = PACKAGE_ROOT / "data"
-TRAINING_DATA_FILE = "train_tweets_small.csv"
+TRAINING_DATA_FILE = "train_tweets.csv"
 TRAINING_DATA_SUBSET_FILE = "train_tweets_small.csv"
 WORD_EMBEDDINGS_DIM = 100
 GLOVE_EMBEDDINGS_FILE = f"glove.6B.{WORD_EMBEDDINGS_DIM}d.txt"

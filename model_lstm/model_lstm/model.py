@@ -4,7 +4,19 @@ from keras.wrappers.scikit_learn import KerasClassifier
 import numpy as np
 from model_lstm.config import config
 
+def set_seeds():
+    # Ensures model training is reproducible.
+    seed_value = config.SEED
+    import os
+    os.environ['PYTHONHASHSEED']=str(seed_value)
+    import random
+    random.seed(seed_value)
+    np.random.seed(seed_value)
+    import tensorflow as tf
+    tf.random.set_seed(seed_value)
+
 def make_model():
+    set_seeds()
     embedding_matrix = np.load(config.DATA_DIR / config.EMBEDDING_MATRIX_FILE)
     matrix_shape = embedding_matrix.shape
     embedding_layer = layers.Embedding(matrix_shape[0],
@@ -15,7 +27,7 @@ def make_model():
     model = Sequential()
     model.add(Input(shape=(config.PADDING_MAX_LENGTH,), dtype="int64"))
     model.add(embedding_layer)
-    model.add(layers.Bidirectional(layers.LSTM(64, dropout=0.2, recurrent_dropout=0.2)))
+    model.add(layers.Bidirectional(layers.LSTM(64)))
     model.add(layers.Dense(1, activation="sigmoid"))
     model.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
     return model
