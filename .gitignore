@@ -8,3 +8,4 @@ model_lstm/build
 model_lstm/dist
 *.egg-info
 .tox
+.env
