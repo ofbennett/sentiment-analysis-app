@@ -2,7 +2,12 @@
 
 This package contains the code necessary to train, test and publish an LSTM sentiment classifier.
 
-First:
+Get the training data from here: http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip
+Get the GLoVe word embeddings from here: http://nlp.stanford.edu/data/glove.6B.zip
+
+Rename the tweet training file to `train_tweets.csv`. Create a small subset of the rows in this file (~400 rows) and place them into a file called `train_tweets_small.csv`. Then place both these files and the GLoVe embedding files into the `model_lstm/data/` directory.
+
+Then:
 
 `$ pip install tox`
 

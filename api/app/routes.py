@@ -5,6 +5,8 @@ from model_lstm import __version__ as _model_lstm_version
 from model_lstm.predict import predict_one, predict_many
 from logging import getLogger
 
+# Here __name__=="app". Careful not to conflict with name of 
+# application.logger which is "sa_api" in this case
 logger = getLogger(__name__)
 
 basic_api = Blueprint("basic_api", __name__)
