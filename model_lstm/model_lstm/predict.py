@@ -16,4 +16,4 @@ def predict_many(X):
 def predict_one(X):
     df = pd.DataFrame({"text":[X]})
     pred = lstm_pipeline.predict(df)
-    return pred[0]
+    return pred[0][0]
