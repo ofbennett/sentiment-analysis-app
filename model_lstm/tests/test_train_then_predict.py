@@ -32,7 +32,6 @@ def test_predict_against_training_subset():
     assert acc > 0.7
 
 def test_model_training_reproducible():
-    data_subset_path = config.DATA_DIR / config.TRAINING_DATA_SUBSET_FILE
     model1 = train_test_run()
     model2 = train_test_run()
     for l1, l2 in zip(model1.layers, model2.layers):
