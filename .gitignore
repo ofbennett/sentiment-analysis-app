@@ -9,3 +9,4 @@ model_lstm/dist
 *.egg-info
 .tox
 .env
+api/logs
