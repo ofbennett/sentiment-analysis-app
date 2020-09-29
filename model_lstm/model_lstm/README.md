@@ -7,7 +7,7 @@ Usage:
 `$ pip install model_lstm --extra-index-url https://${FURY_TOKEN}@pypi.fury.io/${FURY_USERNAME}/`
 
 ``` python
->>> from model_lstm import predict_one, predict_many
+>>> from model_lstm.predict import predict_one, predict_many
 >>> predict_one("What a great day")
 1
 >>> predict_many(["this is great","this is bad","this is wonderful"])
