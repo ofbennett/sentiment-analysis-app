@@ -8,9 +8,9 @@ EMAIL = 'contact.me.ob@gmail.com'
 AUTHOR = 'Oscar Bennett'
 REQUIRES_PYTHON = '>=3.7.0'
 ROOT_DIR = Path(__file__).resolve().parent
-LONG_DESCRIPTION = (ROOT_DIR / 'README.md').read_text(encoding='utf-8')
-
 PACKAGE_DIR = ROOT_DIR / 'model_lstm'
+LONG_DESCRIPTION = (PACKAGE_DIR / 'README.md').read_text(encoding='utf-8')
+
 with open(PACKAGE_DIR / 'VERSION') as f:
     VERSION = f.read().strip()
 
@@ -29,7 +29,8 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=('tests',)),
-    package_data={'model_lstm': ['VERSION', 
+    package_data={'model_lstm': ['VERSION',
+                                 'README.md',
                                  'trained_models/lstm_model_v1.0.0.h5', 
                                  'trained_models/lstm_pipeline_v1.0.0.pkl']},
     install_requires=list_reqs(),
