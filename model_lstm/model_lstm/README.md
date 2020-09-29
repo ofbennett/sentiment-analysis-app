@@ -8,8 +8,8 @@ Usage:
 
 ``` python
 >>> import model_lstm
->>> prediction = model_lstm.predict_one("This is a great day")
+>>> prediction = model_lstm.predict_one("What a great day")
 >>> print(prediction)
-1
+[1]
 ```
 1 = positive, 0 = negative
