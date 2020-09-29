@@ -1,5 +1,7 @@
 # Sentiment Analysis LSTM classifier model
 
+This package contains the code necessary to train, test and publish an LSTM sentiment classifier.
+
 First:
 
 `$ pip install tox`
