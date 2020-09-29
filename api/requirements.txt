@@ -2,4 +2,4 @@
 --extra-index-url https://pypi.org/simple/
 
 model_lstm==1.0.0
-flask
+flask>=1.1.2,<1.2.0
