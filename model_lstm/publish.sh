@@ -11,6 +11,9 @@ die() {
     exit 1
 }
 
+# Remove previous builds
+rm dist/*
+
 # Gemfury only lets you publish one of sdist and wheel for free
 # python setup.py sdist bdist_wheel || die "Building package failed."
 python setup.py bdist_wheel || die "Building package failed."
