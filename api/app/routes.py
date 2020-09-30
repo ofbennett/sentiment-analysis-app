@@ -44,7 +44,6 @@ def model_lstm_predict_one():
         else:
             text = json_data['text']
             pred = predict_one(text)
-            pred = int(pred) # remove this line once model_lstm>=1.0.1
             response = {'pred': pred, 'model_lstm_version': _model_lstm_version, 'api_version': _api_version}
             return jsonify(response)
 
