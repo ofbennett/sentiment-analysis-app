@@ -33,6 +33,8 @@ def validation_examples():
                      "a"*1500,
                      "feowgaoeinbao",
                      "I have wonderful news!",
-                     None]
-    target_status_codes = [200, 400, 400, 200, 200, 400]
+                     None,
+                     "1234",
+                     1234]
+    target_status_codes = [200, 400, 400, 200, 200, 400, 200, 400]
     return test_examples, target_status_codes
