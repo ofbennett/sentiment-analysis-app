@@ -16,11 +16,11 @@ To run tests with existing model:
 
 `$ tox`
 
-To train a new model then run tests, first increment the VERSION, then run:
+To train a new model then run tests, first increment the VERSION locally (don't git commit it), then run:
 
 `$ tox -- -s`
 
-To publish a new model:
+To publish a new model, first git commit the new VERSION, then:
 
 `$ bash publish.sh`
 
