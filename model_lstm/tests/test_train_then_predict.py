@@ -13,7 +13,7 @@ def test_predict_one():
     from model_lstm.predict import predict_one
     test_example = "This is great"
     pred = predict_one(test_example)
-    assert pred[0] == 1
+    assert pred == 1
 
 def test_predict_many(easy_sentiment_examples):
     from model_lstm.predict import predict_many

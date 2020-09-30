@@ -12,7 +12,7 @@ Then:
 
 `$ pip install tox`
 
-To run tests with existing model:
+To run tests with an existing model:
 
 `$ tox`
 
@@ -26,3 +26,4 @@ To publish a new model, first git commit all new changes, then the new VERSION f
 
 Model versions losses and accuracies:
 - `1.0.0`: train_loss: 0.4067 - train_accuracy: 0.8131 - val_loss: 0.4065 - val_accuracy: 0.8133
+- `1.0.1`: train_loss: 0.4056 - train_accuracy: 0.8136 - val_loss: 0.4059 - val_accuracy: 0.8136

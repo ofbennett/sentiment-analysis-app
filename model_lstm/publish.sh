@@ -11,7 +11,9 @@ die() {
     exit 1
 }
 
-python setup.py sdist bdist_wheel || die "Building package failed."
+# Gemfury only lets you publish one of sdist and wheel for free
+# python setup.py sdist bdist_wheel || die "Building package failed."
+python setup.py bdist_wheel || die "Building package failed."
 
 for file in $(ls dist)
 do
