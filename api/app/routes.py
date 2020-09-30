@@ -15,6 +15,7 @@ model_lstm_api = Blueprint("model_lstm_api", __name__)
 
 @basic_api.route('/v1/health', methods=['GET'])
 def health():
+    logger.info("/v1/health endpoint hit.")
     if request.method == 'GET':
         return 'ok'
 
