@@ -25,3 +25,14 @@ def easy_sentiment_examples():
     target_examples = [1, 0, 1, 0, 1] # 1=positive, 0=negative
     
     return test_examples, target_examples
+
+@pytest.fixture
+def validation_examples():
+    test_examples = ["This is great", 
+                     "", 
+                     "a"*1500,
+                     "feowgaoeinbao",
+                     "I have wonderful news!",
+                     None]
+    target_status_codes = [200, 400, 400, 200, 200, 400]
+    return test_examples, target_status_codes

@@ -22,6 +22,7 @@ def test_predict_one_endpoint(flask_test_client, easy_sentiment_examples):
     for i, text in enumerate(test_examples):
         post_json_data = {'text': text}
         response = flask_test_client.post('/v1/model_lstm/predict_one', json=post_json_data)
+        assert response.status_code == 200
         response_json_data = response.get_json()
         pred = response_json_data['pred']
         api_version = response_json_data['api_version']
