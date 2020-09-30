@@ -20,7 +20,7 @@ To train a new model then run tests, first increment the VERSION locally (don't 
 
 `$ tox -- -s`
 
-To publish a new model, first git commit the new VERSION, then:
+To publish a new model, first git commit all new changes, then the new VERSION file, then:
 
 `$ bash publish.sh`
 
