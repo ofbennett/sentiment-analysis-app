@@ -1,4 +1,4 @@
-export $(cat .env | xargs)
+export $(cat ../.env | xargs)
 
 set -e
 
