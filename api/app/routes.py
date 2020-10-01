@@ -35,15 +35,20 @@ def model_lstm_version():
 def model_lstm_predict_one():
     if request.method == 'POST':
         json_data = request.get_json()
-        errors = validate_input(json_data)
-        if errors is not None:
-            error_string = " ".join(errors['text'])
-            logger.info(f'Invalid input: {error_string}')
-            response = {'errors': errors}
+        if json_data is None:
+            logger.info('No JSON data in POST request')
+            response = {'errors': 'No JSON data in POST request'}
             return jsonify(response), 400
         else:
-            text = json_data['text']
-            pred = predict_one(text)
-            response = {'pred': pred, 'model_lstm_version': _model_lstm_version, 'api_version': _api_version}
-            return jsonify(response)
+            errors = validate_input(json_data)
+            if errors is not None:
+                error_string = " ".join(errors['text'])
+                logger.info(f'Invalid input: {error_string}')
+                response = {'errors': errors}
+                return jsonify(response), 400
+            else:
+                text = json_data['text']
+                pred = predict_one(text)
+                response = {'pred': pred, 'model_lstm_version': _model_lstm_version, 'api_version': _api_version}
+                return jsonify(response)
 
