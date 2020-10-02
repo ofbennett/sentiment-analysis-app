@@ -17,11 +17,11 @@ I used the **Sentiment140 dataset** which can be downloaded from [here](https://
 
 &nbsp;
 
-## How was it made?
+## How was this made?
 
 &nbsp;
 
-The machine learning model is hosted on a server in the cloud wrapped in an API. The front end running in your browser makes HTTP requests to this API in order to obtain the sentiment predictions it is showing you. The machine learning model was built with [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/) and [nltk](https://www.nltk.org/). The API around the model was built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and this front end was built with [Dash](https://dash.plotly.com/). 
+The machine learning model is hosted on a server in the cloud wrapped in an API I built for it. The front end running in your browser makes HTTP requests to this API in order to obtain the sentiment predictions it is showing you. The machine learning model was built with [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/) and [nltk](https://www.nltk.org/). The API around the model was built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and this front end was built with [Dash](https://dash.plotly.com/). 
 
 &nbsp;
 
