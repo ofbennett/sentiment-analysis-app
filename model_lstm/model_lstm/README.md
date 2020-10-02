@@ -12,5 +12,7 @@ Usage:
 1
 >>> predict_many(["this is great","this is bad","this is wonderful"])
 [[1],[0],[1]]
+>>> predict_one("What a great day", proba=True)
+0.9437
 ```
 1 = positive, 0 = negative
