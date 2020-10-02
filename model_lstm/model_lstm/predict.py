@@ -13,8 +13,12 @@ def predict_many(X):
     pred = lstm_pipeline.predict(df)
     return pred
 
-def predict_one(X):
+def predict_one(X, proba=False):
     X = str(X)
     df = pd.DataFrame({"text":[X]})
-    pred = lstm_pipeline.predict(df)
-    return int(pred[0][0])
+    if proba:
+        pred = lstm_pipeline.predict_proba(df)
+        return float(pred[0][1])
+    else:
+        pred = lstm_pipeline.predict(df)
+        return int(pred[0][0])
