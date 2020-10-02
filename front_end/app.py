@@ -49,9 +49,9 @@ def update_result(text):
             return [pred, pred_val*100, bar_color]
         else:
             print(f"Error response from API. Code: {response.status_code}")
-            return ['', 50, 'info']
+            return ['Sentiment Prediction', 50, 'info']
     else:
-        return ['', 50, 'info']
+        return ['Sentiment Prediction', 50, 'info']
 
 server = app.server
 if __name__ == '__main__':
