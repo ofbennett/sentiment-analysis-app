@@ -9,3 +9,14 @@ services:
         restart: always
         ports: 
             - "5000:5000"
+        depends_on:
+            - api
+    api:
+        build:
+            context: api/
+            dockerfile: Dockerfile
+            args: 
+                - FURY_USERNAME=${FURY_USERNAME}
+                - FURY_TOKEN=${FURY_TOKEN} # passes in token to dockerfile via arg
+        container_name: api
+        restart: always
