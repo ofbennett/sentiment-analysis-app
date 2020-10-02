@@ -6,6 +6,7 @@ WORKDIR /opt/api/
 
 ARG FURY_USERNAME
 ARG FURY_TOKEN
+ARG MODEL_LSTM_VERSION
 
 COPY requirements_docker.txt ./requirements_docker.txt
 RUN pip install --upgrade pip
