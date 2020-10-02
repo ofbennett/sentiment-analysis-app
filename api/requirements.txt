@@ -1,7 +1,7 @@
-# --index-url https://${FURY_TOKEN}@pypi.fury.io/${FURY_USERNAME}/
+--index-url https://${FURY_TOKEN}@pypi.fury.io/${FURY_USERNAME}/
 --extra-index-url https://pypi.org/simple/
 
-# model_lstm==1.0.1 # Needs to be installed in dockerfile to pass in secrets
+model_lstm==${MODEL_LSTM_VERSION}
 flask>=1.1.2,<1.2.0
 marshmallow>=3.8.0,<3.9.0
 pytest>=6.0.2,<6.1.0

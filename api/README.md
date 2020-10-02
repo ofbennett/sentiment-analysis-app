@@ -9,11 +9,9 @@ This is the API which provides an interface for communicating with the Sentiment
 - `/v1/model_lstm/version`
 - `/v1/model_lstm/predict_one`
 
-## To Run locally (without docker):
-- Place a `.env` file with the FURY_USERNAME and FURY_TOKEN env variables in the `/api/` dir. 
-- Then uncomment lines in the `requirements.txt` file. Then:
+## To Run locally (without docker): 
 
-`$ export $(cat .env | xargs)`
+`$ export $(cat ../.env | xargs)`
 
 `$ pip install -r requirements.txt`
 

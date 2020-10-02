@@ -7,12 +7,12 @@ WORKDIR /opt/api/
 ARG FURY_USERNAME
 ARG FURY_TOKEN
 
-COPY requirements.txt ./requirements.txt
+COPY requirements_docker.txt ./requirements_docker.txt
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install -r requirements_docker.txt
 
 # This needs to be outside of requirements.txt to pass in secrets
-RUN pip install model_lstm==1.0.1 \
+RUN pip install model_lstm==${MODEL_LSTM_VERSION} \
     --index-url https://${FURY_TOKEN}@pypi.fury.io/${FURY_USERNAME}/ \
     --extra-index-url https://pypi.org/simple/
 

@@ -15,8 +15,9 @@ services:
         build:
             context: api/
             dockerfile: Dockerfile
-            args: 
+            args: # passes in variables to dockerfile via args
                 - FURY_USERNAME=${FURY_USERNAME}
-                - FURY_TOKEN=${FURY_TOKEN} # passes in token to dockerfile via arg
+                - FURY_TOKEN=${FURY_TOKEN}
+                - MODEL_LSTM_VERSION=${MODEL_LSTM_VERSION}
         container_name: api
         restart: always
