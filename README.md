@@ -1,6 +1,6 @@
 # Sentiment Analysis App
 
-<p align="center"><img src="./resources/demo.gif" width="500"></p>
+<p align="center"><img src="./resources/demo.gif" width="450"></p>
 
 ## Overview
 
