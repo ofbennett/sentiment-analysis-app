@@ -18,6 +18,6 @@ services:
             args: # passes in variables to dockerfile via args
                 - FURY_USERNAME=${FURY_USERNAME}
                 - FURY_TOKEN=${FURY_TOKEN}
-                - MODEL_LSTM_VERSION=${MODEL_LSTM_VERSION}
+                - API_MODEL_LSTM_VERSION=${API_MODEL_LSTM_VERSION}
         container_name: api
         restart: always
