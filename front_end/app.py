@@ -23,7 +23,9 @@ sentiment_analysis_layout = html.Div(
             dbc.Progress(id="bar", value=50, color='info')
         ]),
         html.Div(id="result", children="Sentiment Prediction", style={'margin': '10px', 'height': '1em'}),
-        dcc.Markdown(md, id="markdown", style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
+        html.Div(id="markdown-area", children=[dcc.Markdown(md, id="markdown")])
+        # html.Div(id="markdown-area", children=[dcc.Markdown(md, id="markdown")], style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
+        # dcc.Markdown(md, id="markdown", style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
     ], style={'textAlign':'center', 'backgroundColor': colors['background']})
 
 app.layout = sentiment_analysis_layout

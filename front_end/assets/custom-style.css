@@ -4,10 +4,23 @@
     margin-right: 25%;
   }
 
+#markdown-area {
+  margin-top: 80px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 10px;
+}
+
 @media screen and (max-width: 500px) {
     #text-area {
-      width: 90%;
-      margin-left: 5%; 
-      margin-right: 5%;
+      width: 80%;
+      margin-left: 10%; 
+      margin-right: 10%;
+    }
+    #markdown-area {
+      margin-top: 80px;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      padding-bottom: 10px;
     }
   }
