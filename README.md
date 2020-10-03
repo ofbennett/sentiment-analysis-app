@@ -6,6 +6,8 @@
 
 This is an NLP machine learning system which can predict the positive/negative sentiment of user provided text. The machine learning model (built with `Keras`, `TensorFlow`, `scikit-learn`, and `NLTK`) is deployable as a Python package and is placed behind an API written in `Flask`. I've built a simple front end using `Dash` to demonstrate the behavior of the model (shown above). I use `Docker` containers to isolate the API and Front End applications and use `Docker Compose` to deploy the whole system. The model in the back end is currently a bidirectional LSTM.
 
+I have forced model training to be completely deterministic so each model version can be exactly reproduced by re-running training with the corresponding `config.py` file.
+
 ## Data Sources
 
 I trained the model on a dataset of ~1.6 million labelled tweets, so everything it knows about language sentiment it learned from Twitter! The dataset is called the Sentiment140 dataset and can be downloaded from [here](https://www.kaggle.com/kazanova/sentiment140) or [here](http://help.sentiment140.com/). I also used pre-trained GLoVe word embeddings which can be downloaded from [here](https://nlp.stanford.edu/projects/glove/).
