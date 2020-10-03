@@ -2,4 +2,4 @@
 
 ## Overview
 
-<p align="center"><img src="./resources/demo.gif" width="850"></p>
+<p align="center"><img src="./resources/demo.gif" width="500"></p>
