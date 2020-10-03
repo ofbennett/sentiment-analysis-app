@@ -18,10 +18,12 @@ sentiment_analysis_layout = html.Div(
     [
         html.H1("Sentiment Analyzer", style={'padding-top':'20px','margin-bottom':'30px', 'text-decoration': 'underline'}),
         # html.Div(children="Oscar Bennett, October 2020", style={'textAlign':'right', 'margin-right':'20px'}),
-        dcc.Textarea(id="text", placeholder="Write something here...", style={'width': '50%', 'height': 200}),
-        dbc.Progress(id="bar", value=50, style={'width': '50%', 'margin-left': '25%', 'margin-right': '25%'}),
+        html.Div(id="text-area", children=[
+            dcc.Textarea(id="text", placeholder="Write something here...", style={'width': '100%', 'height': 180}),
+            dbc.Progress(id="bar", value=50)
+        ]),
         html.Div(id="result", children="Sentiment Prediction", style={'margin': '10px', 'height': '1em'}),
-        dcc.Markdown(md, id="markdown", style={'margin-top': '80px', 'margin-left': '100px', 'margin-right': '100px','padding-bottom': '10px'})
+        dcc.Markdown(md, id="markdown", style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
     ], style={'textAlign':'center', 'backgroundColor': colors['background']})
 
 app.layout = sentiment_analysis_layout

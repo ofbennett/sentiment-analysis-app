@@ -1,0 +1,13 @@
+#text-area {
+    width: 50%;
+    margin-left: 25%; 
+    margin-right: 25%;
+  }
+
+@media screen and (max-width: 500px) {
+    #text-area {
+      width: 80%;
+      margin-left: 10%; 
+      margin-right: 10%;
+    }
+  }
