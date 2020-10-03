@@ -16,7 +16,7 @@ app.title = "Sentiment Analyser"
 
 sentiment_analysis_layout = html.Div(
     [
-        html.H1("Sentiment Analyzer", style={'padding-top':'20px','margin-bottom':'30px'}),
+        html.H1("Sentiment Analyzer", style={'padding-top':'20px','margin-bottom':'30px', 'text-decoration': 'underline'}),
         # html.Div(children="Oscar Bennett, October 2020", style={'textAlign':'right', 'margin-right':'20px'}),
         dcc.Textarea(id="text", placeholder="Write something here...", style={'width': '50%', 'height': 200}),
         dbc.Progress(id="bar", value=50, style={'width': '50%', 'margin-left': '25%', 'margin-right': '25%'}),

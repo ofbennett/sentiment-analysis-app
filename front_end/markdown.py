@@ -3,9 +3,9 @@ md = """
 
 &nbsp;
 
-This is an **NLP machine learning model** which can measure the positive/negative "sentiment" of text. Have a play with it and see if you agree with the model's predictions. I trained the model on a dataset of ~1.6 million labelled tweets from Twitter. I deployed it on a server in the cloud, wrapped it in an API, and then built this front end to interact with it. The model is currently a **bidirectional LSTM**. I'm hoping to try out some other models as well (got my eye on those shiny new Transformers).
+This is an **NLP machine learning model** which can measure the positive/negative "sentiment" of text. Have a play with it and see if you agree with the model's predictions. I trained the model on a dataset of ~1.6 million labelled tweets so everthing it knows about language sentiment it learned from Twitter! The model in the back end is currently a **bidirectional LSTM**. I'm hoping to try out some other models as well (got my eye on those shiny new Transformers).
 
-An [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) is a type of neural network which is good at making predictions about things that come in sequences, like stock market prices or text. One of the things that makes an LSTM different from other networks, is that it has a simple "memory" property so when it traverses a sequence it doesn't forget what happened earlier in the sequence. This makes them work a bit better then the slightly simpler [RNNs](https://en.wikipedia.org/wiki/Recurrent_neural_network).
+An [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) is a type of neural network which is good at making predictions about things that come in sequences, like stock market prices or text. One of the things that makes an LSTM different from other networks is that it has a simple "memory" property, so when it traverses a sequence it doesn't forget what happened in earlier parts of the sequence.
 
 &nbsp;
 
@@ -21,7 +21,7 @@ I used the **Sentiment140 dataset** which can be downloaded from [here](https://
 
 &nbsp;
 
-The machine learning model is hosted on a server in the cloud wrapped in an API I built for it. The front end running in your browser makes HTTP requests to this API in order to obtain the sentiment predictions it is showing you. The machine learning model was built with [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/) and [nltk](https://www.nltk.org/). The API around the model was built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and this front end was built with [Dash](https://dash.plotly.com/). 
+I trained the LSTM model locally, deployed it on a server in the cloud, wrapped it in an API, and then built this front end to interact with it. The front end makes HTTP requests to the API in order to obtain the sentiment predictions it is showing you. The machine learning model was built with [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/) and [nltk](https://www.nltk.org/). The API around the model was built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and this front end was built with [Dash](https://dash.plotly.com/).
 
 &nbsp;
 
