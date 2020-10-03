@@ -20,7 +20,7 @@ sentiment_analysis_layout = html.Div(
         # html.Div(children="Oscar Bennett, October 2020", style={'textAlign':'right', 'margin-right':'20px'}),
         html.Div(id="text-area", children=[
             dcc.Textarea(id="text", placeholder="Write something here...", style={'width': '100%', 'height': 180}),
-            dbc.Progress(id="bar", value=50)
+            dbc.Progress(id="bar", value=50, color='info')
         ]),
         html.Div(id="result", children="Sentiment Prediction", style={'margin': '10px', 'height': '1em'}),
         dcc.Markdown(md, id="markdown", style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
@@ -42,12 +42,18 @@ def update_result(text):
             if pred_val < 0.2:
                 pred = 'Negative'
                 bar_color = 'danger'
-            elif pred_val > 0.8:
-                pred = 'Positive'
-                bar_color = 'success'
-            else:
+            elif 0.2 <= pred_val < 0.4:
+                pred = 'Lean Negative'
+                bar_color = 'info'
+            elif 0.4 <= pred_val < 0.6:
                 pred = 'Neutral'
                 bar_color = 'info'
+            elif 0.6 <= pred_val < 0.8:
+                pred = 'Lean Positive'
+                bar_color = 'info'
+            else:
+                pred = 'Positive'
+                bar_color = 'success'
             return [pred, pred_val*100, bar_color]
         else:
             print(f"Error response from API. Code: {response.status_code}")
