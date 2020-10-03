@@ -30,7 +30,7 @@ API_MODEL_LSTM_VERSION=
 
 `$ docker-compose up --build`
 
-6. Bring up `http://localhost:5000/` in a browser and have a play!
+6. Bring up `http://localhost:80` in a browser and have a play!
 
 ## Next Steps
 I'd like to:
