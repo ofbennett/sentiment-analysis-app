@@ -9,13 +9,13 @@ This is the API which provides an interface for communicating with the Sentiment
 - `/v1/model_lstm/version`
 - `/v1/model_lstm/predict_one`
 
-## To Run locally (without docker): 
+## To Test locally (without docker): 
 
 `$ export $(cat ../.env | xargs)`
 
 `$ pip install -r requirements.txt`
 
-`$ bash run.sh`
-
-## To Run Tests:
 `$ pytest tests`
+
+## Then to run:
+`$ bash run.sh`

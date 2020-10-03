@@ -8,7 +8,7 @@ This is an NLP machine learning system which can measure the positive/negative s
 
 ## Data Sources
 
-I trained the model on a dataset of ~1.6 million labelled tweets so everything it knows about language sentiment it learned from Twitter! The dataset is called the Sentiment140 dataset and can be downloaded from [here](https://www.kaggle.com/kazanova/sentiment140). I also used the pretrained GLoVe word embeddings which can be downloaded from [here](https://nlp.stanford.edu/projects/glove/).
+I trained the model on a dataset of ~1.6 million labelled tweets so everything it knows about language sentiment it learned from Twitter! The dataset is called the Sentiment140 dataset and can be downloaded from [here](https://www.kaggle.com/kazanova/sentiment140) or [here](http://help.sentiment140.com/). I also used the pretrained GLoVe word embeddings which can be downloaded from [here](https://nlp.stanford.edu/projects/glove/).
 
 ## How to Build and Run
 
@@ -22,13 +22,15 @@ API_MODEL_LSTM_VERSION=
 ```
 `API_MODEL_LSTM_VERSION` is the model version you want the API container to fetch from Gemfury and install for use in the application.
 
-3. Train and publish the NLP model following the steps in the [Model README](./model_lstm/README.md)
+3. Train, test and publish the NLP model following the steps in the [model_lstm README](./model_lstm/README.md)
 
-4. Build the whole system with docker-compose:
-```
-$ docker-compose up --build
-```
-5. Bring up `http://localhost:5000/` in a browser and have a play!
+4. Test the API following the steps in the [api README](./api/README.md)
+
+5. Build the whole system with docker-compose:
+
+`$ docker-compose up --build`
+
+6. Bring up `http://localhost:5000/` in a browser and have a play!
 
 ## Next Steps
 I'd like to:
