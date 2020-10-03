@@ -1,10 +1,10 @@
 # Sentiment Analysis App
 
+<p align="center"><img src="./resources/demo.gif" width="500"></p>
+
 ## Overview
 
-This is an NLP machine learning system which can measure the positive/negative sentiment of user provided text. The machine learning model is deployable as a Python package and in this system is placed behind an API written in Flask. I've built a simple front end using Dash to demonstrate the behavior of the model. The model in the back end is currently a bidirectional LSTM.
-
-<p align="center"><img src="./resources/demo.gif" width="500"></p>
+This is an NLP machine learning system which can measure the positive/negative sentiment of user provided text. The machine learning model is deployable as a Python package and is placed behind an API written in Flask. I've built a simple front end using Dash to demonstrate the behavior of the model. The model in the back end is currently a bidirectional LSTM.
 
 ## Data Sources
 
@@ -12,15 +12,18 @@ I trained the model on a dataset of ~1.6 million labelled tweets so everything i
 
 ## How to Build and Run
 
-1. I used Gemfury as a private package index. Setup an account and obtain a full access token for your account.
+1. I used Gemfury as a private package index. Setup an account and obtain a full access token for the account.
+
 2. Create a `.env` file in the top directory of this repo with the following contents:
 ```
 FURY_USERNAME=
 FURY_TOKEN=
 API_MODEL_LSTM_VERSION=
 ```
-API_MODEL_LSTM_VERSION is the model version you want the API container to fetch from Gemfury and install for use in the application.
+`API_MODEL_LSTM_VERSION` is the model version you want the API container to fetch from Gemfury and install for use in the application.
+
 3. Train and publish the NLP model following the steps in the [Model README](./model_lstm/README.md)
+
 4. Build the whole system with docker-compose:
 ```
 $ docker-compose up --build
