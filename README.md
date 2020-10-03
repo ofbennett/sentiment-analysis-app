@@ -4,7 +4,7 @@
 
 ## Overview
 
-This is an NLP machine learning system which can measure the positive/negative sentiment of user provided text. The machine learning model is deployable as a Python package and is placed behind an API written in Flask. I've built a simple front end using Dash to demonstrate the behavior of the model. The model in the back end is currently a bidirectional LSTM.
+This is an NLP machine learning system which can measure the positive/negative sentiment of user provided text. The machine learning model is deployable as a Python package and is placed behind an API written in Flask. I've built a simple front end using Dash to demonstrate the behavior of the model (demonstrated above). The model in the back end is currently a bidirectional LSTM.
 
 ## Data Sources
 

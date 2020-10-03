@@ -21,7 +21,7 @@ I used the **Sentiment140 dataset** which can be downloaded from [here](https://
 
 &nbsp;
 
-I trained the LSTM model locally, deployed it on a server in the cloud, wrapped it in an API, and then built this front end to interact with it. The front end makes HTTP requests to the API in order to obtain the sentiment predictions it is showing you. The machine learning model was built with [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/) and [nltk](https://www.nltk.org/). The API around the model was built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and this front end was built with [Dash](https://dash.plotly.com/).
+I trained the LSTM model locally, deployed it on a server in the cloud, wrapped it in an API, and then built this front end to interact with it. The front end makes HTTP requests to the API in order to obtain the sentiment predictions it is showing you. The machine learning model was built with [Keras](https://keras.io/), [Tensorflow](https://www.tensorflow.org/), [scikit-learn](https://scikit-learn.org/stable/) and [NLTK](https://www.nltk.org/). The API around the model was built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and this front end was built with [Dash](https://dash.plotly.com/).
 
 &nbsp;
 
