@@ -4,9 +4,13 @@
 
 ## Overview
 
-This is an NLP machine learning system which can predict the positive/negative sentiment of user provided text. The machine learning model (built with `Keras`, `TensorFlow`, `scikit-learn`, and `NLTK`) is deployable as a Python package and is placed behind an API written in `Flask`. I've built a simple front end using `Dash` to demonstrate the behavior of the model (shown above). I use `Docker` containers to isolate the API and Front End applications and use `Docker Compose` to deploy the whole system. The model in the back end is currently a bidirectional LSTM.
+This is an NLP machine learning system which can predict the positive/negative sentiment of user provided text. The system includes a model, an API to allow communication with the model over a network, and a simple front end. The NLP model is currently a bidirectional LSTM and was trained on ~1.6 million sentiment labelled text examples.
 
-I have forced model training to be completely deterministic so each model version can be exactly reproduced by re-running training with the corresponding `config.py` file.
+## The Architecture
+
+The machine learning model (built with `Keras`, `TensorFlow`, `scikit-learn`, and `NLTK`) is deployable as a Python package and is placed behind an API written in `Flask`. I've built a simple front end using `Dash` to demonstrate the behavior of the model (shown above). I use `Docker` containers to isolate the API and Front End applications and use `Docker Compose` to deploy the whole system.
+
+<p align="center"><img src="./resources/system_diagram.png" width="850"></p>
 
 ## Data Sources
 
@@ -25,6 +29,8 @@ API_MODEL_LSTM_VERSION=
 `API_MODEL_LSTM_VERSION` is the model version you want the API container to fetch from Gemfury and install for use in the application.
 
 3. Train, test and publish the NLP model following the steps in the [model_lstm README](./model_lstm/README.md)
+
+Note: I have forced model training to be completely deterministic so each model version can be exactly reproduced by re-running training with the corresponding `config.py` file.
 
 4. Test the API following the steps in the [api README](./api/README.md)
 
