@@ -5,7 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import config
 import requests
-from markdown import md
+from markdown import md1, md2
 
 colors = {'background': 'lightcyan'}
 
@@ -23,9 +23,12 @@ sentiment_analysis_layout = html.Div(
             dbc.Progress(id="bar", value=50, color='info')
         ]),
         html.Div(id="result", children="Sentiment Prediction", style={'margin': '10px', 'height': '1em'}),
-        html.Div(id="markdown-area", children=[dcc.Markdown(md, id="markdown")])
-        # html.Div(id="markdown-area", children=[dcc.Markdown(md, id="markdown")], style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
-        # dcc.Markdown(md, id="markdown", style={'margin-top': '80px', 'margin-left': '10%', 'margin-right': '10%','padding-bottom': '10px'})
+        html.Div(id="markdown-area", children=[dcc.Markdown(md1, id="markdown1"),
+                                               html.Img(src="assets/system_diagram.png",style = {"width": "75%", 
+                                                                                                    "display": "block",
+                                                                                                    "margin-left": "auto",
+                                                                                                    "margin-right": "auto"}),
+                                               dcc.Markdown(md2, id="markdown2"),])
     ], style={'textAlign':'center', 'backgroundColor': colors['background']})
 
 app.layout = sentiment_analysis_layout
